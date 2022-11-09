@@ -1,0 +1,37 @@
+.btn-propio{
+    background-color:$btn_color;
+    color: $white;
+}
+
+.btn-propio:hover{
+    background-color:$hover_color;
+    color: $btn_color;
+}
+
+.link-propio:hover{
+    color:$hover_color;
+    background-color: $btn_color;
+}
+
+.mi-busqueda:hover{
+ @extend .link-propio;
+}
+
+.link-propio{
+    color:$white;
+    background-color: $btn_color;
+}
+
+.mi-busqueda{
+    color: $white;
+    border-color: $white;
+}
+
+body{
+    background-color: $btn_color;
+}
+
+.miNav{
+    color: $white;
+    background-color:$btn_color;
+}
