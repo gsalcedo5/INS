@@ -17,7 +17,7 @@
             <p id="arriba"></p>
             <nav class="navbar navbar-expand-lg fixed-top miNav"> <!-- Barra de Navegación -->
                 <div class="container-fluid">
-                    <a class="navbar-brand link-propio">GS Tecnologies</a>
+                    <a class="navbar-brand link-propio" href="../index.html">GS Tecnologies</a>
                     <button class="navbar-toggler  mi-busqueda" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-dark navbar-toggler-icon"></span>
                     </button>
@@ -34,8 +34,8 @@
                             </li>
                         </ul>
                             <form class="d-flex" role="search">
-                                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                                <button class="btn mi-busqueda" type="submit">Search</button>
+                                <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
+                                <button class="btn mi-busqueda" type="submit">Buscar</button>
                             </form>
                     </div>
                 </div>
@@ -72,7 +72,7 @@
                 <div class="d-flex justify-content-center align-items-center">
                     <h2> Clientes Felices:</h2>
                 </div>  
-                <div class="container  d-flex justify-content-center align-items-center"> 
+                <div class="container d-flex justify-content-center align-items-center"> 
                     <div class="row"> 
                         <div class="col-md-6 pt-md-3 col-sm-12 pt-sm-2 mt-xs-5 d-flex justify-content-center align-items-center">
                             <div class="d-flex justify-content-center pt-2">
@@ -112,10 +112,29 @@
         </main>
         <footer>
             <div class="d-flex justify-content-center align-items-center p-2">
-                <p class="texto"> Para mas información puede enviarnos un correo a nuestra dirección email 
-                    o acercarse a nuestro local.</p>      
+                <p class="texto"> ¿Tiene alguna consulta? Utilice el siguiente formulario y nos comunicaremos a la brevedad.</p>      
             </div> 
-            <div class="d-flex justify-content-center align-items-center p-2"> <!-- Mapa con ubicación -->
+
+            <div> <!-- Formulario -->
+                <form class>
+                    <div class="m-3">
+                        <label for="input-group-text" class="form-label texto2">Nombre y Apellido:</label>
+                        <input type="text" class="form-control">
+                      </div>
+                    <div class="m-3">
+                      <label for="exampleInputEmail1" class="form-label texto2">Dirección de Correo Electrónico:</label>
+                      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                      <div id="emailHelp" class="form-text m-2">Te avisaremos sobre nuestras ofertas semanalmente.</div>
+                      <label for="input-group-text" class="form-label texto2">Deje su consulta aquí:</label>
+                    </div>
+                    <div class="form-floating m-3">
+                        <textarea class="form-control" placeholder="Consulta" id="floatingTextarea2" style="height: 100px"></textarea>
+                        <label for="floatingTextarea2">Consulta:</label>
+                      </div>
+                    <button type="submit" class="btn btn-form justify-content-center align-items-center m-3">Enviar</button>
+                  </form>
+            </div>
+            <div class="d-flex justify-content-center align-items-center p-2 mt-3"> <!-- Mapa con ubicación -->
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4021.0778347010455!2d-60.67016344579578!3d-32.926867978227726!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95b654abc3ab1d5f%3A0x2f90ce97db2c5a6!2sAlto%20Rosario%20Shopping.!5e0!3m2!1ses!2sar!4v1664655555996!5m2!1ses!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div> 
             <div class="text-center pt-3">

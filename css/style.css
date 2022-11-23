@@ -32,6 +32,16 @@ body {
   background-color: black;
 }
 
+.btn-form {
+  background-color: white;
+  color: black
+}
+
+.btn-form:hover {
+  background-color: aqua;
+  color: black
+}
+
 * {
   margin: 0;
   padding: 0;
