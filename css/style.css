@@ -32,19 +32,19 @@ body {
   background-color: black;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+}
+
 .btn-form {
   background-color: white;
-  color: black
+  color: black;
 }
 
 .btn-form:hover {
   background-color: aqua;
-  color: black
-}
-
-* {
-  margin: 0;
-  padding: 0;
+  color: black;
 }
 
 h1 {
