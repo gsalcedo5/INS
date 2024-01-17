@@ -87,6 +87,20 @@ h5 {
   transform: scale(1.1);
 }
 
+#miCarrusel {
+  max-height: 600px; 
+  margin-bottom: 20px; 
+  margin-top:50px;
+}
+
+#miCarrusel img {
+  object-fit: cover; /* Ajusta el tamaño de la imagen para cubrir completamente el contenedor */
+  max-height: 100%; /* Hace que las imágenes ocupen el 100% de la altura máxima del carrusel */
+  width: 100%; /* Ajusta el ancho para ocupar el 100% del contenedor */
+  margin: auto; /* Centra la imagen horizontalmente */
+  display: block; /* Elimina el espacio adicional debajo de la imagen */
+}
+
 .texto {
   font-size: 20px;
 

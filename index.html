@@ -44,15 +44,43 @@
             </header>
 
             <main> 
+                <div class="d-flex justify-content-center align-items-center">
+                   <!-- Introducción  <h1> ¡Bienvenido a nuestra Web! </h1>-->
+                </div>      
+                <section> <!-- Carrusel -->
+                    <div id="miCarrusel" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="./imagenes/Titanium.png" class="d-block w-40" alt="Slide 1">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="./imagenes/Watch.png" class="d-block w-40  alt="Slide 2">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="./imagenes/15profeed.png" class="d-block w-40 " alt="Slide 3">
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#miCarrusel" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Anterior</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#miCarrusel" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Siguiente</span>
+                        </button>
+                    </div>
+                </section>
+
+
+
+
                 <section> <!-- Introducción -->
-                    <div class="d-flex justify-content-center align-items-center">
-                        <h1> ¡Bienvenido a nuestra Web! </h1>
-                    </div>       
+ 
                     <div class="d-flex justify-content-center ">
                         <h2> Tenemos el iPhone que buscás </h2>
                     </div>                   
                     <div class="d-flex justify-content-center ">
-                        <img class="img-fluid " src="./imagenes/iPhone15pro.png"  width="400" height="400" alt="foto nuevo iphone 15 pro">
+                        <img class="img-fluid " src="./imagenes/iphone14problack.png"  width="400" height="400" alt="foto nuevo iphone 15 pro">
                     </div>      
                     <div class="d-flex justify-content-center m-2">
                         <h3> Adquirilo en nuestra tienda</h3>   
@@ -65,29 +93,32 @@
                     <div class="container Productos"> 
                         <div class="row"> 
                                 <div class="col-lg-4 p-lg-5 col-md-6 p-md-4 col-sm-12 p-sm-6 mt-sm-3 d-flex justify-content-center align-items-center pt-3 producto">                                  
-                                    <div class="card mt-2" style="width: 18rem; height: 23rem;">
+                                    <div class="card mt-2" style="width: 18rem; height: 26rem;">
                                         <img src="./imagenes/iPhone14Pro.png" class="card-img-top img-fluid" style="height: 100%;" alt="iPhone 14 Pro">
                                             <div class="card-body">
                                                 <h5 class="card-title">iPhone 14 Pro</h5>
                                                 <p class="card-text Descripcion"> Con Dinamic Island.</p>
+                                                <p class="card-text Precio">$870 USD</p>
                                             </div>
                                         </div>
                                 </div>
                                 <div class="col-lg-4 p-lg-5 col-md-6 p-md-4 col-sm-12 p-sm-6 mt-sm-3 d-flex justify-content-center align-items-center pt-3 producto">                               
-                                    <div class="card mt-2" style="width: 18rem; height: 23rem;">
+                                    <div class="card mt-2" style="width: 18rem; height: 26rem;">
                                         <img src="./imagenes/iPhone13.png" class="card-img-top img-fluid" style="height: 100%;" alt="iPhone 13">
                                         <div class="card-body">
                                             <h5 class="card-title ">iPhone 13</h5>
-                                            <p class="card-text Descripcion"> Con Cámaras Dual</p>
+                                            <p class="card-text Descripcion"> Con Cámaras Dual.</p>
+                                            <p class="card-text Precio">$730 USD</p>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-lg-4 p-lg-5 col-md-6 p-md-4 col-sm-12 p-sm-6 mt-sm-3 d-flex justify-content-center align-items-center pt-3 producto">                      
-                                    <div class="card mt-2" style="width: 18rem; height: 23rem;">
+                                    <div class="card mt-2" style="width: 18rem; height: 26rem;">
                                         <img src="./imagenes/macbook.webp" class="card-img-top img-fluid" style="height: 100%;" alt="Macbook Pro M1 Touchbar">
                                         <div class="card-body">
                                             <h5 class="card-title">Macbook Pro M1</h5>
                                             <p class="card-text Descripcion">Con pantalla Retina y Touchbar.</p>
+                                            <p class="card-text Precio">$1100 USD</p>
                                         </div>
                                     </div>
                                 </div>
