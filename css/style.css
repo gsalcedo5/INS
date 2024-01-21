@@ -87,19 +87,58 @@ h5 {
   transform: scale(1.1);
 }
 
-#miCarrusel {
-  max-height: 600px; 
+
+#miCarruselDesktop {
+  max-height: 900px; 
   margin-bottom: 20px; 
   margin-top:50px;
 }
 
-#miCarrusel img {
+#miCarruselDesktop img {
   object-fit: cover; /* Ajusta el tamaño de la imagen para cubrir completamente el contenedor */
   max-height: 100%; /* Hace que las imágenes ocupen el 100% de la altura máxima del carrusel */
   width: 100%; /* Ajusta el ancho para ocupar el 100% del contenedor */
   margin: auto; /* Centra la imagen horizontalmente */
   display: block; /* Elimina el espacio adicional debajo de la imagen */
 }
+
+#miCarruselMobile img {
+  object-fit: cover; /* Ajusta el tamaño de la imagen para cubrir completamente el contenedor */
+  max-height: 90%; /* Hace que las imágenes ocupen el 100% de la altura máxima del carrusel */
+  width: 100%; /* Ajusta el ancho para ocupar el 100% del contenedor */
+  margin: auto; /* Centra la imagen horizontalmente */
+  display: block; /* Elimina el espacio adicional debajo de la imagen */
+}
+
+#miCarruselMobile {
+  /* Estilos específicos para el carrusel móvil */
+  max-height: 600px;
+  margin-bottom: 10px;
+  margin-top:50px;
+}
+
+ /* Ajustes para pantallas más pequeñas (menos de 576px) */
+ @media (max-width: 575.98px) {
+  #miCarruselDesktop {
+      display: none; /* Oculta el carrusel de escritorio en pantallas pequeñas */
+  }
+
+  #miCarruselMobile {
+      display: block; /* Muestra el carrusel móvil en pantallas pequeñas */
+  }
+}
+
+/* Ajustes para pantallas más grandes (mayores de 575.98px) */
+@media (min-width: 576px) {
+  #miCarruselDesktop {
+      display: block; /* Muestra el carrusel de escritorio en pantallas grandes */
+  }
+
+  #miCarruselMobile {
+      display: none; /* Oculta el carrusel móvil en pantallas grandes */
+  }
+}
+
 
 .texto {
   font-size: 20px;
