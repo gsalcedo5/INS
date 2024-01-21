@@ -79,12 +79,17 @@ h5 {
   margin: 0.5%;
   color: whitesmoke;
 }
-.producto {
-  transition: all 0.4s;
-}
 
-.producto:hover {
-  transform: scale(1.1);
+
+/* Estilos específicos para monitores de computadora */
+@media only screen and (min-width: 768px) {
+  .producto {
+    transition: all 0.4s;
+  }
+
+  .producto:hover {
+    transform: scale(1.1);
+  }
 }
 
 
