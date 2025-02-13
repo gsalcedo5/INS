@@ -240,7 +240,6 @@
     
     <script>
         function actualizarPrecio(idPrecio) {
-            console.log('Entrando en actualizarPrecio para:', idPrecio);
 
             // Obtenemos el número de tarjeta y el identificador de memoria
             var numeroTarjeta = idPrecio.split('_')[1];
@@ -248,7 +247,6 @@
 
             // Construimos el selector para encontrar la opción seleccionada
             var selector = 'input[name="memoria' + numeroTarjeta + '"]:checked';
-            console.log('Selector:', selector);
 
             var precioSeleccionado = document.querySelector(selector);
 
