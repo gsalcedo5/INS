@@ -130,7 +130,7 @@
                                                     </label>
                                                 </div>
                                 
-                                                    <p class="card-text Precio m-2" id="precio_1"></p>
+                                                    <!-- <p class="card-text Precio m-2" id="precio_1"></p> -->
                                             </div>
                                         </div>
                                 </div>
@@ -152,7 +152,7 @@
                                                     256 GB
                                                 </label>
                                             </div>
-                                            <p class="card-text Precio m-1" id="precio_3"></p>
+                                            <!-- <p class="card-text Precio m-1" id="precio_3"></p> -->
 
                                         </div>
                                     </div>
@@ -164,7 +164,7 @@
                                             <h5 class="card-title ">S25 Ultra</h5>
                                             <p class="card-text Descripcion"> Con Ultra Zoom.</p>
                                             
-                                            <div class="btn-group" role="group">
+<!--                                             <div class="btn-group" role="group">
                                                 <input class="btn-check" type="radio" name="memoria2" id="memoria1_2" value="1600" autocomplete="off" onchange="actualizarPrecio('precio_2')" checked>
                                                 <label class="btn btn-outline-dark" for="memoria1_2">
                                                     256  GB
@@ -174,8 +174,21 @@
                                                 <label class="btn btn-outline-dark" for="memoria2_2">
                                                     512 GB
                                                 </label>
+                                            </div> -->
+
+                                            <div class="btn-group" role="group">
+                                                <input class="btn-check" type="radio" name="memoria2" id="memoria1_2" value="" autocomplete="off" onchange="actualizarPrecio('precio_2')" checked>
+                                                <label class="btn btn-outline-dark" for="memoria1_2">
+                                                    256 GB
+                                                </label>
+                                            
+                                                <input class="btn-check" type="radio" name="memoria2" id="memoria2_2" value="" autocomplete="off" onchange="actualizarPrecio('precio_2')">
+                                                <label class="btn btn-outline-dark" for="memoria2_2">
+                                                    512 GB
+                                                </label>
                                             </div>
-                                            <p class="card-text Precio m-2" id="precio_2"></p>
+
+                                           <!-- <p class="card-text Precio m-2" id="precio_2"></p> -->
                                         </div>
                                     </div>
                                 </div>
@@ -204,6 +217,10 @@
                 <div class="d-flex justify-content-center align-items-center"></div>
                     <p class="copyright">© Copyright 2024 INS. All Rights Reserved. </p>      
                     <p class="copyright">   Developed by GS. Powered by TNS.</p>
+                    <div>
+                        <p id="contenedor-datos">Valor de D4</p>
+                        <p>Valor de C5: <span id="elemento_C5">Cargando...</span></p>
+                    </div>
                 </div>
             </footer>
 
@@ -235,16 +252,91 @@
 
             var precioSeleccionado = document.querySelector(selector);
 
-            if (precioSeleccionado) {
-                precioSeleccionado = precioSeleccionado.value;
+            // if (precioSeleccionado) {
+            //     precioSeleccionado = precioSeleccionado.value;
 
-                // Actualizamos el precio según la opción seleccionada
-                document.getElementById(idPrecio).innerText = '$' + precioSeleccionado + ' USD';
-            } else {
-                console.error('No se ha seleccionado ninguna opción.');
-            }
+            //     // Actualizamos el precio según la opción seleccionada
+            //     // document.getElementById(idPrecio).innerText = '$' + precioSeleccionado + ' USD';
+            // } else {
+            //     console.error('No se ha seleccionado ninguna opción.');
+            // }
         }
+
+        // URL de tu hoja de cálculo publicada en formato CSV
+        const url = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vR-okGhXPRAtmaqZkYAFpJfLJm-MYcu6bIqDEbgPHEVua_58nxip2yJ6YE7sBtGqa0_9lBv9qhzyTqK/pub?gid=0&single=true&output=csv';
+
+    // Definir un objeto que almacenará los precios por equipo y memoria
+    let preciosEquipos = {};
+
+    // Función para obtener y procesar el CSV
+    function obtenerDatosCSV() {
+        fetch(url)
+            .then(response => response.text())  // Obtener el contenido como texto
+            .then(csvData => {
+                // Procesar el CSV y convertirlo en un arreglo de filas
+                const filas = csvData.split('\n');
+
+                // Obtener los precios para cada equipo de las celdas específicas
+                preciosEquipos = {
+                    equipo1: { //iPhone 16
+                        precio256GB: obtenerPrecioDeCelda(filas, 'D7'),
+                        precio512GB: obtenerPrecioDeCelda(filas, 'D8')
+                    },
+                    equipo2: { //S25 Ultra
+                        precio256GB: obtenerPrecioDeCelda(filas, 'D25'),
+                        precio512GB: obtenerPrecioDeCelda(filas, 'D26')
+                    },
+                    equipo3: { //iPhone 16 Pro
+                        precio256GB: obtenerPrecioDeCelda(filas, 'D9'),
+                        precio512GB: obtenerPrecioDeCelda(filas, 'D10')
+                    }
+                    // Puedes agregar más equipos de esta manera
+                };
+
+                // Actualizar los valores de los radios de los equipos con los precios del CSV
+                actualizarValoresRadios(1, preciosEquipos.equipo1.precio256GB, preciosEquipos.equipo1.precio512GB);
+                actualizarValoresRadios(2, preciosEquipos.equipo2.precio256GB, preciosEquipos.equipo2.precio512GB);
+                actualizarValoresRadios(3, preciosEquipos.equipo3.precio256GB, preciosEquipos.equipo3.precio512GB);
+            })
+            .catch(error => console.error('Error al obtener los datos:', error));
+    }
+
+    // Función para obtener el valor de una celda específica
+    function obtenerPrecioDeCelda(filas, celda) {
+        // Extraemos la fila y la columna
+        const columna = celda.charAt(0).toUpperCase(); // "D" -> 3
+        const fila = parseInt(celda.substring(1)) - 1; // "D3" -> 3 -> índice 2 (empezando desde 0)
+
+        const columnaIndex = columna.charCodeAt(0) - 'A'.charCodeAt(0);  // Convierte A -> 0, B -> 1, C -> 2, etc.
+
+        // Si la fila existe
+        if (filas[fila]) {
+            const celdasFila = filas[fila].split(','); // Dividimos la fila en celdas
+            return celdasFila[columnaIndex]; // Devuelve el valor de la celda
+        } else {
+            console.error(`No se encontró valor para la celda ${celda}`);
+            return '';
+        }
+    }
+
+    // Función para actualizar los valores de los radios para un equipo específico
+    function actualizarValoresRadios(equipoNumero, precio256GB, precio512GB) {
+        // Asignar los valores traídos del CSV a los inputs de los radios
+        document.getElementById(`memoria1_${equipoNumero}`).value = precio256GB;
+        document.getElementById(`memoria2_${equipoNumero}`).value = precio512GB;
+
+        // También actualizamos los precios mostrados en las etiquetas de los radios
+        document.querySelector(`label[for="memoria1_${equipoNumero}"]`).textContent = `256 GB - $${precio256GB}`;
+        document.querySelector(`label[for="memoria2_${equipoNumero}"]`).textContent = `512 GB - $${precio512GB}`;
+    }
+
+
+        // Llamada a la función cuando la página se haya cargado
+        document.addEventListener("DOMContentLoaded", obtenerDatosCSV);
+    
     </script>
+
+
 
 </body> 
 </html>
