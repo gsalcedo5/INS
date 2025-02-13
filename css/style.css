@@ -47,6 +47,10 @@ body {
   background-color: black;
 }
 
+.hidden-label {
+  display: none;
+}
+
 * {
   margin: 0;
   padding: 0;

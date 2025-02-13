@@ -155,7 +155,16 @@
                                     <div class="card-body">
                                         <h5 class="card-title">Airpods 3ra Gen</h5>
                                         <p class="card-text Descripcion"> Resistentes al agua.</p>
-                                        <p class="card-text Precio">$215 USD</p>
+                                        <!-- <p class="card-text Precio">$215 USD</p> -->
+
+                                        <input class="btn-check" type="radio" name="memoria7" id="memoria1_7" value="" autocomplete="off" onchange="actualizarPrecio('precio_7')" checked>
+                                        <label class="btn btn-outline-dark" for="memoria1_7">
+                                        </label>
+                                        <input class="btn-check hidden-label" type="radio" name="memoria7" id="memoria2_7" value="" autocomplete="off" onchange="actualizarPrecio('precio_7')" >
+                                        <label class="btn btn-outline-dark hidden-label" for="memoria2_7">
+                                        </label>
+
+
                                     </div>
                                 </div>
                         </div>
@@ -201,7 +210,14 @@
                             <div class="card-body">
                                 <h5 class="card-title ">Airpods Pro 2da Gen</h5>
                                 <p class="card-text Descripcion"> Con Sonido Envolvente.</p>
-                                 <p class="card-text Precio">$270 USD</p>
+
+                                <input class="btn-check" type="radio" name="memoria6" id="memoria1_6" value="" autocomplete="off" onchange="actualizarPrecio('precio_6')" checked>
+                                <label class="btn btn-outline-dark" for="memoria1_6">
+                                </label>
+                                <input class="btn-check hidden-label" type="radio" name="memoria6" id="memoria2_6" value="" autocomplete="off" onchange="actualizarPrecio('precio_6')" >
+                                <label class="btn btn-outline-dark hidden-label" for="memoria2_6">
+                                </label>
+                                 <!-- <p class="card-text Precio">$270 USD</p> -->
                             </div>
                         </div>
 
@@ -255,8 +271,8 @@
             actualizarPrecio('precio_3');
             actualizarPrecio('precio_4');
             actualizarPrecio('precio_5');
-            // actualizarPrecio('precio_6');
-            // actualizarPrecio('precio_7');
+            actualizarPrecio('precio_6');
+            actualizarPrecio('precio_7');
             // actualizarPrecio('precio_8');
             // actualizarPrecio('precio_9');
         
@@ -321,10 +337,14 @@
                         precio256GB: obtenerPrecioDeCelda(filas, 'D9'),
                         precio512GB: obtenerPrecioDeCelda(filas, 'D10')
                     },
-                    // equipo6: { //Airpods Pro 2da
-                    //     precio256GB: obtenerPrecioDeCelda(filas, 'H19')
-                    // }
-
+                    equipo6: { //Airpods Pro 2da
+                        precio256GB: obtenerPrecioDeCelda(filas, 'H19'),
+                        precio512GB: obtenerPrecioDeCelda(filas, 'H20')
+                     },
+                     equipo7: { //Airpods 3ra
+                        precio256GB: obtenerPrecioDeCelda(filas, 'H16'),
+                        precio512GB: obtenerPrecioDeCelda(filas, 'H16')
+                     }
                 
 
                 };
@@ -335,8 +355,8 @@
                 actualizarValoresRadios(3, preciosEquipos.equipo3.precio256GB, preciosEquipos.equipo3.precio512GB);
                 actualizarValoresRadios(4, preciosEquipos.equipo4.precio256GB, preciosEquipos.equipo4.precio512GB);
                 actualizarValoresRadios(5, preciosEquipos.equipo5.precio256GB, preciosEquipos.equipo5.precio512GB);
-                // actualizarValoresRadios(6, preciosEquipos.equipo6.precio256GB);
-                // actualizarValoresRadios(7, preciosEquipos.equipo7.precio256GB, preciosEquipos.equipo7.precio512GB);
+                actualizarValoresRadios(6, preciosEquipos.equipo6.precio256GB, preciosEquipos.equipo6.precio512GB);
+                actualizarValoresRadios(7, preciosEquipos.equipo7.precio256GB, preciosEquipos.equipo7.precio512GB);
                 // actualizarValoresRadios(8, preciosEquipos.equipo8.precio256GB, preciosEquipos.equipo8.precio512GB);
                 // actualizarValoresRadios(9, preciosEquipos.equipo9.precio256GB, preciosEquipos.equipo9.precio512GB);
             })
