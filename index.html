@@ -324,8 +324,8 @@
         document.getElementById(`memoria2_${equipoNumero}`).value = precio512GB;
 
         // También actualizamos los precios mostrados en las etiquetas de los radios
-        document.querySelector(`label[for="memoria1_${equipoNumero}"]`).textContent = `256 GB - $${precio256GB}`;
-        document.querySelector(`label[for="memoria2_${equipoNumero}"]`).textContent = `512 GB - $${precio512GB}`;
+        document.querySelector(`label[for="memoria1_${equipoNumero}"]`).textContent += ` - $${precio256GB}`;
+        document.querySelector(`label[for="memoria2_${equipoNumero}"]`).textContent += ` - $${precio512GB}`;
     }
 
 
