@@ -133,7 +133,7 @@
                                 <div class="card-body">
                                     <h5 class="card-title ">S25 Ultra</h5>
                                     <p class="card-text Descripcion"> Con Ultra Zoom.</p>
-    
+
                                     <div class="btn-group" role="group">
                                         <input class="btn-check" type="radio" name="memoria8" id="memoria1_8" value="" autocomplete="off" onchange="actualizarPrecio('precio_8')" checked>
                                         <label class="btn btn-outline-dark" for="memoria1_8">
@@ -148,14 +148,14 @@
                             </div>
                         </div>
                         </div>
-    
+
                         <div class="col-lg-4 p-lg-5 col-md-6 p-md-4 col-sm-12 p-sm-6 mt-sm-3 d-flex justify-content-center align-items-center pt-3 producto">
                             <div class="card mt-2" style="width: 18rem; height: 28rem;">
                                 <img src="../imagenes/watch10.png" class="card-img-top img-fluid" style="height: 100%;">
                                 <div class="card-body">
                                     <h5 class="card-title ">Watch Series 10</h5>
                                     <p class="card-text Descripcion"> Pantalla OLED.</p>
-    
+
                                     <div class="btn-group" role="group">
                                         <input class="btn-check" type="radio" name="memoria9" id="memoria1_9" value="" autocomplete="off" onchange="actualizarPrecio('precio_9')" checked>
                                         <label class="btn btn-outline-dark" for="memoria1_9">
@@ -169,7 +169,7 @@
                                     </div>
                                 </div>
                             </div>
-    
+
                         </div>
                         <div class="col-lg-4 p-lg-5 col-md-6 p-md-4 col-sm-12 p-sm-6 mt-sm-3 d-flex justify-content-center align-items-center pt-3 producto">
                             <div class="card mt-2" style="width: 18rem; height: 27rem;">
@@ -177,7 +177,7 @@
                                 <div class="card-body">
                                     <h5 class="card-title ">iPad Air 11 M2</h5>
                                     <p class="card-text Descripcion"> Compatible con Pencil.</p>
-    
+
                                     <div class="btn-group" role="group">
                                         <input class="btn-check" type="radio" name="memoria10" id="memoria1_10" value="" autocomplete="off" onchange="actualizarPrecio('precio_10')" checked>
                                         <label class="btn btn-outline-dark" for="memoria1_10">
@@ -260,7 +260,7 @@
                         </div>
                     </div>
 
-                <div class="row">   <!-- Fila 4 -->
+            <div class="row">   <!-- Fila 4 -->
                         <div class="col-lg-4 p-lg-5 col-md-6 p-md-4 col-sm-12 p-sm-6 mt-sm-3 d-flex justify-content-center align-items-center pt-3 producto">
                                 <div class="card mt-2" style="width: 18rem; height: 28rem;">
                                     <img src="../imagenes/iphone15Front2.png" class="card-img-top img-fluid" style="height: 100%;" alt="iPhone 15">
@@ -325,8 +325,8 @@
                             </div>
                         </div>
                    
-                </div>
-                <div class="row">   <!-- Fila 5 -->
+            </div>
+            <div class="row">   <!-- Fila 5 -->
                     <div class="col-lg-4 p-lg-5 col-md-6 p-md-4 col-sm-12 p-sm-6 mt-sm-3 d-flex justify-content-center align-items-center pt-3 producto">
 
                         <div class="card mt-2" style="width: 18rem; height: 28rem;">
@@ -367,14 +367,28 @@
                             </div>
                         </div>
                     </div>
-                </div>
+            </div>
 
 
 
-                    </div>
+        </div>
             </section> 
             
         </section>
+        <section id="Seminuevos">
+            <p id="titulo">STOCK SEMINUEVOS SELECCIONADOS</p>
+        
+            <!-- Lista de elementos -->
+            <ul id="listaItems">
+                <!-- Los elementos de la lista se insertarán aquí dinámicamente -->
+            </ul>
+    
+            <!-- Texto al final -->
+            <p id="garantia">Todas las compras incluyen 🎁 Cargador • Funda • Templado</p>
+            <p id="garantia">GARANTÍA DE 30 DÍAS 👍🏼 <br> Problemas técnicos del equipo que no haya sido producto de un mal uso (golpes, presiones, humedad). En caso de cambio se hace por otro que esté disponible.</p>
+
+        </section>
+
             <div class="d-flex justify-content-center align-items-center p-2">
                 <p class="texto text-center d-inline-flex align-items-center d-flex align-items-center ">
                     Para más información puede enviarnos un mensaje a nuestro instagram: </p>    
@@ -390,6 +404,9 @@
                 <a href="#arriba">
                 <img src="../imagenes/LogoTech2.png"  class="rounded img-fluid "  width="100" height="90"></a>
             </div>
+
+
+
         </main>
 
             <footer class="footer-container">
@@ -530,6 +547,23 @@
                 actualizarValoresRadios(11, preciosEquipos.equipo11.precio256GB, preciosEquipos.equipo11.precio512GB);
                 actualizarValoresRadios(12, preciosEquipos.equipo12.precio256GB, preciosEquipos.equipo12.precio512GB);
                 actualizarValoresRadios(13, preciosEquipos.equipo13.precio256GB, preciosEquipos.equipo13.precio512GB);
+
+
+                // ✅ Lista de celdas a extraer dinámicamente
+                const celdas = ['F26', 'F27', 'F28', 'F29', 'F30', 'F31', 'F32', 'F33', 'F34', 'F35', 'F36'];
+
+                // Extraer valores y manejar celdas vacías
+                const valores = celdas.map(celda => {
+                    const valor = obtenerPrecioDeCelda(filas, celda);
+                    return valor && valor.trim() !== "" ? valor : null;
+                 }).filter(valor => valor !== null); // Eliminar valores vacíos
+
+            // Crear lista de elementos <li> con los datos
+            const listaHTML = valores.map(valor => `<li>${valor}</li>`).join('');
+
+            // Insertar la lista dentro del section
+            document.getElementById("listaItems").innerHTML = listaHTML;
+
             })
             .catch(error => console.error('Error al obtener los datos:', error));
     }

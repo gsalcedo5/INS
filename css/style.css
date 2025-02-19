@@ -47,6 +47,43 @@ body {
   background-color: black;
 }
 
+#Seminuevos {
+  background-color: #333; /* Fondo oscuro */
+  color: white; /* Letra blanca */
+  width: 80%; /* El contenedor ocupa el 80% del ancho de la pantalla */
+  max-width: 500px; /* Ancho máximo (opcional) */
+  padding: 20px; /* Espaciado interior */
+  border-radius: 15px; /* Bordes redondeados */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+  font-family: Arial, sans-serif; /* Tipografía moderna */
+
+  /* Centramos el contenedor en su lugar dentro del flujo del documento */
+  margin: 30px auto; /* Centrado horizontal y margen superior para separación */
+  text-align: center; /* Centrado del texto dentro del contenedor */
+}
+
+/* Estilo para los párrafos */
+#Seminuevos p {
+  font-size: 16px; /* Tamaño de fuente */
+  margin: 10px 0; /* Espaciado entre los textos */
+}
+
+/* Estilo de la lista de items */
+#Seminuevos ul {
+  list-style-type: none; /* Sin viñetas */
+  padding: 0;
+}
+
+#Seminuevos li {
+  margin: 10px 0; /* Espaciado entre los elementos */
+  padding: 10px;
+  background-color: #444; /* Fondo gris oscuro para cada item */
+  border-radius: 8px; /* Bordes redondeados en los items */
+  font-size: 16px; /* Tamaño de fuente */
+}
+
+
+
 .hidden-label {
   display: none;
 }
