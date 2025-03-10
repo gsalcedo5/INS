@@ -181,6 +181,19 @@
                         </div>
                     </div>
                 </section>
+                <section id="Seminuevos">
+                    <p id="titulo">STOCK SEMINUEVOS SELECCIONADOS</p>
+                
+                    <!-- Lista de elementos -->
+                    <ul id="listaItems">
+                        <!-- Los elementos de la lista se insertarán aquí dinámicamente -->
+                    </ul>
+            
+                    <!-- Texto al final -->
+                    <p id="garantia">Todas las compras incluyen 🎁 Cargador • Funda • Templado</p>
+                    <p id="garantia">GARANTÍA DE 30 DÍAS 👍🏼 <br> Problemas técnicos del equipo que no haya sido producto de un mal uso (golpes, presiones, humedad). En caso de cambio se hace por otro que esté disponible.</p>
+        
+                </section>
                 <section>
                     <div class="d-flex justify-content-center align-items-center p-2">
                         <p class="texto text-center d-inline-flex align-items-center d-flex align-items-center ">
@@ -203,10 +216,6 @@
                 <div class="d-flex justify-content-center align-items-center"></div>
                     <p class="copyright">© Copyright 2024 INS. All Rights Reserved. </p>      
                     <p class="copyright">   Developed by GS. Powered by TNS.</p>
-                    <div>
-                        <p id="contenedor-datos">Valor de D4</p>
-                        <p>Valor de C5: <span id="elemento_C5">Cargando...</span></p>
-                    </div>
                 </div>
             </footer>
 
@@ -281,6 +290,21 @@
                 actualizarValoresRadios(1, preciosEquipos.equipo1.precio256GB, preciosEquipos.equipo1.precio512GB);
                 actualizarValoresRadios(2, preciosEquipos.equipo2.precio256GB, preciosEquipos.equipo2.precio512GB);
                 actualizarValoresRadios(3, preciosEquipos.equipo3.precio256GB, preciosEquipos.equipo3.precio512GB);
+            // ✅ Lista de celdas a extraer dinámicamente
+            const celdas = ['F27', 'F29', 'F31', 'F33', 'F35', 'F37', 'F39', 'F41', 'F43', 'F45', 'F47'];
+
+            // Extraer valores y manejar celdas vacías
+            const valores = celdas.map(celda => {
+                const valor = obtenerPrecioDeCelda(filas, celda);
+                return valor && valor.trim() !== "" ? valor : null;
+            }).filter(valor => valor !== null); // Eliminar valores vacíos
+
+            // Crear lista de elementos <li> con los datos
+            const listaHTML = valores.map(valor => `<li>${valor}</li>`).join('');
+
+            // Insertar la lista dentro del section
+            document.getElementById("listaItems").innerHTML = listaHTML;
+            
             })
             .catch(error => console.error('Error al obtener los datos:', error));
     }
